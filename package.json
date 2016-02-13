@@ -1,0 +1,49 @@
+{
+  "name": "hexo-tag-asset-res",
+  "version": "0.1.2",
+  "description": "Hexo Tags that consume asset files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timnew/hexo-tag-asset-res.git"
+  },
+  "keywords": [
+    "hexo",
+    "tag",
+    "asset",
+    "image",
+    "link",
+    "timnew"
+  ],
+  "author": {
+    "name": "timnew",
+    "email": "timnew.wti@gmail.com",
+    "url": "https://timnew.github.io/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/timnew/hexo-tag-asset-res/issues"
+  },
+  "homepage": "https://github.com/timnew/hexo-tag-asset-res",
+  "devDependencies": {
+    "coffee-script": "^1.7.1",
+    "del": "^0.1.2",
+    "gulp": "^3.8.7",
+    "gulp-bump": "^0.1.11",
+    "gulp-coffee": "^2.1.1",
+    "yargs": "^1.3.1"
+  },
+  "dependencies": {
+    "moment": "^2.8.1"
+  },
+  "gitHead": "6786ca3b6006ebb7857e3113c5b132f5e683ec81",
+  "readme": "**<h2>OBSOLETE WARNING</h2>**  \n\n**This Plug-in is designed to be used with Hexo 2. And it is considered to be obsoleted after Hexo 3 released, which already has the `asset-folder` feature built-in.**\n\nhexo-tag-asset-res  [![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url][![Stories in Ready](https://badge.waffle.io/timnew/hexo-tag-asset-res.png?label=ready&title=Ready)](https://waffle.io/timnew/hexo-tag-asset-res)\n==================\n\n> [Hexo][hexo-url] tags that enable you to reference files in [post asset] with relative path\n\n## Install\n\nInstall using [npm][npm-url].\n\n    $ npm install hexo-tag-asset-res --save\n\n## Usage\n\nSuppose you have the following folder structure:\n```\nsource\\\n  _posts\\\n    2014-08-15-a-simple-self-introduction.md\n    2014-08-15-a-simple-self-introduction\\\n      my_portrait.jpg\n      my_resume.pdf\n```\n\nIn the markdown file `2014-08-15-a-simple-self-introduction.md`, you can reference files as\n\n```\n  {% asset_img my_portrait.jpg %}\n  {% asset_link my_resume.pdf My Resume %}\n```\nIt generates\n\n```html\n  <img src=\"/2014/08/15/a-simple-self-introduction/my_portrait.jpg\">\n  <a href=\"/2014/08/15/a-simple-self-introduction/my_resume.pdf\">My Resume</a>\n```\n\n### Syntax Detail\n\n```\n  {% asset_img [.class1.class2] file_name.png [width [height]] [\"caption\" [\"hint\"]] %}\n\n  {% asset_link [.class1.class2] file_name.png \"text\" [\"hint\"] %}\n```\n\n**class** (optional): Custom css classes in CSS falvor  \n*hint*: `.class1.class2` generates `class=\"class1 class2\"`\n\n**filename** (mandantory): The file name of the image\n\n**width** (optional): width, both `px` or `%` are accepted\n\n**height** (optional): height, both `px` or `%` are accepted  \n*hint*: `height` is only acceptable when `width` is avaiable\n\n**caption** (optional): The caption of the image.  \n*hint*: To avoid ambiguous value, always quote the text with space, `'` or `\"` are both accepted\n\n**text** (mandantory): The text of the `<a>`  \n*hint*: To avoid ambiguous value, always quote the text with space, `'` or `\"` are both accepted\n\n**hint** (optional): The text displayed when mouse hover  \n*hint*: To avoid ambiguous value, always quote the text with space, `'` or `\"` are both accepted\n\n## Asset Folder\n\nAsset folder can be created manually, it should have the same name as the post\n\nOr\n\nAsset folder can be created automatically when post is created.  \nAdjust the config in `_config.yml`:\n\n```yaml\npost_asset_folder: true\n```\n\n## Roadmap\n\n* [x] Custom classes\n* [x] Width, height for `Asset Image`\n* [x] Title and alt for `Asset Image`\n* [ ] `AssetImage` cascaded in `Asset Link`\n\n## License\nMIT\n\n[![NPM downloads][npm-downloads]][npm-url]\n\n[homepage]: https://github.com/timnew/hexo-tag-asset-res\n\n[npm-url]: https://npmjs.org/package/hexo-tag-asset-res\n[npm-image]: http://img.shields.io/npm/v/hexo-tag-asset-res.svg?style=flat\n[npm-downloads]: http://img.shields.io/npm/dm/hexo-tag-asset-res.svg?style=flat\n\n[depstat-url]: https://gemnasium.com/timnew/hexo-tag-asset-res\n[depstat-image]: http://img.shields.io/gemnasium/timnew/hexo-tag-asset-res.svg?style=flat\n\n[hexo-url]: http://hexo.io/\n[post asset]: http://hexo.io/docs/writing.html#Asset_Folder\n",
+  "readmeFilename": "README.md",
+  "_id": "hexo-tag-asset-res@0.1.2",
+  "_shasum": "8b60986e549001bb8c47c2cafb4d804fa3011de6",
+  "_from": "git+https://github.com/dev-dude/hexo-tag-asset-res.git",
+  "_resolved": "git+https://github.com/dev-dude/hexo-tag-asset-res.git#6786ca3b6006ebb7857e3113c5b132f5e683ec81"
+}
